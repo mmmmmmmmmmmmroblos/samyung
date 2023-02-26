@@ -1,427 +1,515 @@
--- Gui to Lua
--- Version: 3.2
+--[[
+	Roblox2Lua
+	----------
+	
+	This code was generated using
+	Deluct's Roblox2Lua plugin.
+]]--
 
--- Instances:
+--// Instances
 
 local hub = Instance.new("ScreenGui")
-local MainUI = Instance.new("Frame")
-local TopBar = Instance.new("Frame")
-local Title = Instance.new("TextLabel")
-local exitbutton = Instance.new("TextButton")
-local SideTabs = Instance.new("Frame")
-local RakeButton = Instance.new("TextButton")
-local LocalPlayerButton = Instance.new("TextButton")
-local GameButton = Instance.new("TextButton")
-local Sections = Instance.new("Frame")
-local RakeSection = Instance.new("Frame")
-local gotorake = Instance.new("TextButton")
-local Shadow = Instance.new("Frame")
-local GoToRake = Instance.new("TextLabel")
-local killrakeclient = Instance.new("TextButton")
-local Shadow_2 = Instance.new("Frame")
-local killrake = Instance.new("TextLabel")
-local LocalPlayerSection = Instance.new("Frame")
-local GameSection = Instance.new("Frame")
-local dropdown = Instance.new("TextButton")
-local Shadow_3 = Instance.new("Frame")
-local TextLabel = Instance.new("TextLabel")
-local codesdropdown = Instance.new("Frame")
-local freepoints = Instance.new("TextButton")
-local smallboost = Instance.new("TextButton")
-local _1MVISITS = Instance.new("TextButton")
-local sorry4delay = Instance.new("TextButton")
-local sans = Instance.new("TextButton")
-local script = Instance.new("TextLabel")
-local pointstextbox = Instance.new("TextBox")
-local tempkillstextbox = Instance.new("TextBox")
-local Execute = Instance.new("TextButton")
-local Shadow_4 = Instance.new("Frame")
-local Execute_2 = Instance.new("TextLabel")
-
---Properties:
-
-hub.Name = "hub"
-hub.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+hub.IgnoreGuiInset = false
+hub.ResetOnSpawn = true
 hub.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+hub.Name = "hub"
+hub.Parent = workspace
 
-MainUI.Name = "MainUI"
-MainUI.Parent = hub
-MainUI.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-MainUI.BorderColor3 = Color3.fromRGB(255, 255, 255)
-MainUI.BorderSizePixel = 2
-MainUI.Position = UDim2.new(0.404000014, 0, 0.314999998, 0)
-MainUI.Size = UDim2.new(0, 423, 0, 133)
+local main_ui = Instance.new("Frame")
+main_ui.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
+main_ui.BorderColor3 = Color3.new(1, 1, 1)
+main_ui.BorderSizePixel = 2
+main_ui.Position = UDim2.new(0.404000014, 0, 0.314999998, 0)
+main_ui.Size = UDim2.new(0, 423, 0, 133)
+main_ui.Visible = true
+main_ui.Name = "MainUI"
+main_ui.Parent = hub
 
-TopBar.Name = "TopBar"
-TopBar.Parent = MainUI
-TopBar.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-TopBar.BorderSizePixel = 0
-TopBar.Size = UDim2.new(0, 423, 0, 23)
+local loadingscriptmain = Instance.new("LocalScript")
+loadingscriptmain.Name = "loadingscriptmain"
+loadingscriptmain.Parent = main_ui
 
-Title.Name = "Title"
-Title.Parent = TopBar
-Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Title.BackgroundTransparency = 1.000
-Title.Position = UDim2.new(0.0141843967, 0, 0, 0)
-Title.Size = UDim2.new(0, 80, 0, 23)
-Title.Font = Enum.Font.FredokaOne
-Title.Text = "samyunghub"
-Title.TextColor3 = Color3.fromRGB(255, 255, 255)
-Title.TextSize = 14.000
-Title.TextXAlignment = Enum.TextXAlignment.Left
+local top_bar = Instance.new("Frame")
+top_bar.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+top_bar.BorderSizePixel = 0
+top_bar.Size = UDim2.new(0, 423, 0, 23)
+top_bar.Visible = true
+top_bar.Name = "TopBar"
+top_bar.Parent = main_ui
 
-exitbutton.Name = "exitbutton"
-exitbutton.Parent = TopBar
-exitbutton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-exitbutton.BackgroundTransparency = 1.000
-exitbutton.Position = UDim2.new(0.955082595, 0, 0, 0)
-exitbutton.Size = UDim2.new(0, 19, 0, 23)
+local title = Instance.new("TextLabel")
+title.Font = Enum.Font.FredokaOne
+title.Text = "samyunghub"
+title.TextColor3 = Color3.new(1, 1, 1)
+title.TextSize = 14
+title.TextXAlignment = Enum.TextXAlignment.Left
+title.BackgroundColor3 = Color3.new(1, 1, 1)
+title.BackgroundTransparency = 1
+title.Position = UDim2.new(0.0141843967, 0, 0, 0)
+title.Size = UDim2.new(0, 80, 0, 23)
+title.Visible = true
+title.Name = "Title"
+title.Parent = top_bar
+
+local exitbutton = Instance.new("TextButton")
 exitbutton.Font = Enum.Font.Unknown
 exitbutton.Text = "X"
-exitbutton.TextColor3 = Color3.fromRGB(255, 255, 255)
-exitbutton.TextSize = 14.000
+exitbutton.TextColor3 = Color3.new(1, 1, 1)
+exitbutton.TextSize = 14
+exitbutton.BackgroundColor3 = Color3.new(1, 1, 1)
+exitbutton.BackgroundTransparency = 1
+exitbutton.Position = UDim2.new(0.955082595, 0, 0, 0)
+exitbutton.Size = UDim2.new(0, 19, 0, 23)
+exitbutton.Visible = true
+exitbutton.Name = "exitbutton"
+exitbutton.Parent = top_bar
 
-SideTabs.Name = "SideTabs"
-SideTabs.Parent = MainUI
-SideTabs.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-SideTabs.BorderSizePixel = 0
-SideTabs.Position = UDim2.new(0, 0, 0.0649717525, 0)
-SideTabs.Size = UDim2.new(0, 61, 0, 331)
-SideTabs.Visible = false
+local local_script = Instance.new("LocalScript")
+local_script.Parent = top_bar
 
-RakeButton.Name = "RakeButton"
-RakeButton.Parent = SideTabs
-RakeButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-RakeButton.BackgroundTransparency = 1.000
-RakeButton.Size = UDim2.new(0, 61, 0, 59)
-RakeButton.Font = Enum.Font.Unknown
-RakeButton.Text = "Rake"
-RakeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-RakeButton.TextSize = 14.000
+local side_tabs = Instance.new("Frame")
+side_tabs.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+side_tabs.BorderSizePixel = 0
+side_tabs.Position = UDim2.new(0, 0, 0.0649717525, 0)
+side_tabs.Size = UDim2.new(0, 61, 0, 331)
+side_tabs.Visible = false
+side_tabs.Name = "SideTabs"
+side_tabs.Parent = main_ui
 
-LocalPlayerButton.Name = "LocalPlayerButton"
-LocalPlayerButton.Parent = SideTabs
-LocalPlayerButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-LocalPlayerButton.BackgroundTransparency = 1.000
-LocalPlayerButton.Position = UDim2.new(0, 0, 0.178247735, 0)
-LocalPlayerButton.Size = UDim2.new(0, 61, 0, 59)
-LocalPlayerButton.Font = Enum.Font.Unknown
-LocalPlayerButton.Text = "LocalPlayer"
-LocalPlayerButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-LocalPlayerButton.TextScaled = true
-LocalPlayerButton.TextSize = 14.000
-LocalPlayerButton.TextWrapped = true
+local rake_button = Instance.new("TextButton")
+rake_button.Font = Enum.Font.Unknown
+rake_button.Text = "Rake"
+rake_button.TextColor3 = Color3.new(1, 1, 1)
+rake_button.TextSize = 14
+rake_button.BackgroundColor3 = Color3.new(1, 1, 1)
+rake_button.BackgroundTransparency = 1
+rake_button.Size = UDim2.new(0, 61, 0, 59)
+rake_button.Visible = true
+rake_button.Name = "RakeButton"
+rake_button.Parent = side_tabs
 
-GameButton.Name = "GameButton"
-GameButton.Parent = SideTabs
-GameButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GameButton.BackgroundTransparency = 1.000
-GameButton.Position = UDim2.new(0, 0, 0.35649547, 0)
-GameButton.Size = UDim2.new(0, 61, 0, 59)
-GameButton.Font = Enum.Font.Unknown
-GameButton.Text = "Game"
-GameButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-GameButton.TextSize = 14.000
+local local_player_button = Instance.new("TextButton")
+local_player_button.Font = Enum.Font.Unknown
+local_player_button.Text = "LocalPlayer"
+local_player_button.TextColor3 = Color3.new(1, 1, 1)
+local_player_button.TextScaled = true
+local_player_button.TextSize = 14
+local_player_button.TextWrapped = true
+local_player_button.BackgroundColor3 = Color3.new(1, 1, 1)
+local_player_button.BackgroundTransparency = 1
+local_player_button.Position = UDim2.new(0, 0, 0.178247735, 0)
+local_player_button.Size = UDim2.new(0, 61, 0, 59)
+local_player_button.Visible = true
+local_player_button.Name = "LocalPlayerButton"
+local_player_button.Parent = side_tabs
 
-Sections.Name = "Sections"
-Sections.Parent = MainUI
-Sections.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Sections.BackgroundTransparency = 1.000
-Sections.BorderSizePixel = 0
-Sections.Position = UDim2.new(0.144208044, 0, 0.0649717525, 0)
-Sections.Size = UDim2.new(0, 361, 0, 331)
+local game_button = Instance.new("TextButton")
+game_button.Font = Enum.Font.Unknown
+game_button.Text = "Game"
+game_button.TextColor3 = Color3.new(1, 1, 1)
+game_button.TextSize = 14
+game_button.BackgroundColor3 = Color3.new(1, 1, 1)
+game_button.BackgroundTransparency = 1
+game_button.Position = UDim2.new(0, 0, 0.35649547, 0)
+game_button.Size = UDim2.new(0, 61, 0, 59)
+game_button.Visible = true
+game_button.Name = "GameButton"
+game_button.Parent = side_tabs
 
-RakeSection.Name = "RakeSection"
-RakeSection.Parent = Sections
-RakeSection.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-RakeSection.BackgroundTransparency = 1.000
-RakeSection.BorderSizePixel = 0
-RakeSection.Size = UDim2.new(0, 362, 0, 331)
-RakeSection.Visible = false
+local sidetabsscript = Instance.new("LocalScript")
+sidetabsscript.Name = "sidetabsscript"
+sidetabsscript.Parent = side_tabs
 
-gotorake.Name = "gotorake"
-gotorake.Parent = RakeSection
-gotorake.BackgroundColor3 = Color3.fromRGB(48, 48, 48)
+local sections = Instance.new("Frame")
+sections.BackgroundColor3 = Color3.new(1, 1, 1)
+sections.BackgroundTransparency = 1
+sections.BorderSizePixel = 0
+sections.Position = UDim2.new(0.144208044, 0, 0.0649717525, 0)
+sections.Size = UDim2.new(0, 361, 0, 331)
+sections.Visible = true
+sections.Name = "Sections"
+sections.Parent = main_ui
+
+local rake_section = Instance.new("Frame")
+rake_section.BackgroundColor3 = Color3.new(1, 1, 1)
+rake_section.BackgroundTransparency = 1
+rake_section.BorderSizePixel = 0
+rake_section.Size = UDim2.new(0, 362, 0, 331)
+rake_section.Visible = false
+rake_section.Name = "RakeSection"
+rake_section.Parent = sections
+
+local gotorake = Instance.new("TextButton")
+gotorake.Font = Enum.Font.GothamMedium
+gotorake.Text = ""
+gotorake.TextColor3 = Color3.new(1, 1, 1)
+gotorake.TextScaled = true
+gotorake.TextSize = 14
+gotorake.TextWrapped = true
+gotorake.BackgroundColor3 = Color3.new(0.188235, 0.188235, 0.188235)
 gotorake.BorderSizePixel = 0
 gotorake.Position = UDim2.new(0.0303867385, 0, 0.0347431898, 0)
 gotorake.Size = UDim2.new(0, 105, 0, 34)
+gotorake.Visible = true
 gotorake.ZIndex = 2
-gotorake.Font = Enum.Font.GothamMedium
-gotorake.Text = ""
-gotorake.TextColor3 = Color3.fromRGB(255, 255, 255)
-gotorake.TextScaled = true
-gotorake.TextSize = 14.000
-gotorake.TextWrapped = true
+gotorake.Name = "gotorake"
+gotorake.Parent = rake_section
 
-Shadow.Name = "Shadow"
-Shadow.Parent = gotorake
-Shadow.BackgroundColor3 = Color3.fromRGB(22, 22, 22)
-Shadow.BorderSizePixel = 0
-Shadow.Size = UDim2.new(1, 0, 1, 4)
+local shadow = Instance.new("Frame")
+shadow.BackgroundColor3 = Color3.new(0.0862745, 0.0862745, 0.0862745)
+shadow.BorderSizePixel = 0
+shadow.Size = UDim2.new(1, 0, 1, 4)
+shadow.Visible = true
+shadow.Name = "Shadow"
+shadow.Parent = gotorake
 
-GoToRake.Name = "GoTo Rake"
-GoToRake.Parent = gotorake
-GoToRake.AnchorPoint = Vector2.new(0.5, 0.5)
-GoToRake.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GoToRake.BackgroundTransparency = 1.000
-GoToRake.BorderColor3 = Color3.fromRGB(27, 42, 53)
-GoToRake.BorderSizePixel = 0
-GoToRake.Position = UDim2.new(0.5, 0, 0.5, 0)
-GoToRake.Size = UDim2.new(1, -20, 1, -20)
-GoToRake.ZIndex = 2
-GoToRake.Font = Enum.Font.GothamMedium
-GoToRake.Text = "Go to Rake"
-GoToRake.TextColor3 = Color3.fromRGB(255, 255, 255)
-GoToRake.TextScaled = true
-GoToRake.TextSize = 14.000
-GoToRake.TextWrapped = true
+local go_to_rake = Instance.new("TextLabel")
+go_to_rake.Font = Enum.Font.GothamMedium
+go_to_rake.Text = "Go to Rake"
+go_to_rake.TextColor3 = Color3.new(1, 1, 1)
+go_to_rake.TextScaled = true
+go_to_rake.TextSize = 14
+go_to_rake.TextWrapped = true
+go_to_rake.AnchorPoint = Vector2.new(0.5, 0.5)
+go_to_rake.BackgroundColor3 = Color3.new(1, 1, 1)
+go_to_rake.BackgroundTransparency = 1
+go_to_rake.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+go_to_rake.BorderSizePixel = 0
+go_to_rake.Position = UDim2.new(0.5, 0, 0.5, 0)
+go_to_rake.Size = UDim2.new(1, -20, 1, -20)
+go_to_rake.Visible = true
+go_to_rake.ZIndex = 2
+go_to_rake.Name = "GoTo Rake"
+go_to_rake.Parent = gotorake
 
-killrakeclient.Name = "killrakeclient"
-killrakeclient.Parent = RakeSection
-killrakeclient.BackgroundColor3 = Color3.fromRGB(48, 48, 48)
+local local_script_2 = Instance.new("LocalScript")
+local_script_2.Parent = gotorake
+
+local killrakeclient = Instance.new("TextButton")
+killrakeclient.Font = Enum.Font.GothamMedium
+killrakeclient.Text = "Kill Rake (priv server or client)"
+killrakeclient.TextColor3 = Color3.new(1, 1, 1)
+killrakeclient.TextScaled = true
+killrakeclient.TextSize = 14
+killrakeclient.TextWrapped = true
+killrakeclient.BackgroundColor3 = Color3.new(0.188235, 0.188235, 0.188235)
 killrakeclient.BorderSizePixel = 0
 killrakeclient.Position = UDim2.new(0.339779019, 0, 0.0347431898, 0)
 killrakeclient.Size = UDim2.new(0, 105, 0, 34)
+killrakeclient.Visible = true
 killrakeclient.ZIndex = 2
-killrakeclient.Font = Enum.Font.GothamMedium
-killrakeclient.Text = "Kill Rake (priv server or client)"
-killrakeclient.TextColor3 = Color3.fromRGB(255, 255, 255)
-killrakeclient.TextScaled = true
-killrakeclient.TextSize = 14.000
-killrakeclient.TextWrapped = true
+killrakeclient.Name = "killrakeclient"
+killrakeclient.Parent = rake_section
 
-Shadow_2.Name = "Shadow"
-Shadow_2.Parent = killrakeclient
-Shadow_2.BackgroundColor3 = Color3.fromRGB(22, 22, 22)
-Shadow_2.BorderSizePixel = 0
-Shadow_2.Size = UDim2.new(1, 0, 1, 4)
+local shadow_2 = Instance.new("Frame")
+shadow_2.BackgroundColor3 = Color3.new(0.0862745, 0.0862745, 0.0862745)
+shadow_2.BorderSizePixel = 0
+shadow_2.Size = UDim2.new(1, 0, 1, 4)
+shadow_2.Visible = true
+shadow_2.Name = "Shadow"
+shadow_2.Parent = killrakeclient
 
-killrake.Name = "killrake"
-killrake.Parent = killrakeclient
+local killrake = Instance.new("TextLabel")
+killrake.Font = Enum.Font.GothamMedium
+killrake.Text = "Kill Rake client"
+killrake.TextColor3 = Color3.new(1, 1, 1)
+killrake.TextScaled = true
+killrake.TextSize = 25
+killrake.TextWrapped = true
 killrake.AnchorPoint = Vector2.new(0.5, 0.5)
-killrake.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-killrake.BackgroundTransparency = 1.000
-killrake.BorderColor3 = Color3.fromRGB(27, 42, 53)
+killrake.BackgroundColor3 = Color3.new(1, 1, 1)
+killrake.BackgroundTransparency = 1
+killrake.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
 killrake.BorderSizePixel = 0
 killrake.Position = UDim2.new(0.5, 0, 0.5, 0)
 killrake.Size = UDim2.new(1, -20, 1, -20)
+killrake.Visible = true
 killrake.ZIndex = 2
-killrake.Font = Enum.Font.GothamMedium
-killrake.Text = "Kill Rake client"
-killrake.TextColor3 = Color3.fromRGB(255, 255, 255)
-killrake.TextScaled = true
-killrake.TextSize = 25.000
-killrake.TextWrapped = true
+killrake.Name = "killrake"
+killrake.Parent = killrakeclient
 
-LocalPlayerSection.Name = "LocalPlayerSection"
-LocalPlayerSection.Parent = Sections
-LocalPlayerSection.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-LocalPlayerSection.BackgroundTransparency = 1.000
-LocalPlayerSection.BorderSizePixel = 0
-LocalPlayerSection.Size = UDim2.new(0, 362, 0, 331)
-LocalPlayerSection.Visible = false
+local local_script_3 = Instance.new("LocalScript")
+local_script_3.Parent = killrakeclient
 
-GameSection.Name = "GameSection"
-GameSection.Parent = Sections
-GameSection.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GameSection.BackgroundTransparency = 1.000
-GameSection.BorderSizePixel = 0
-GameSection.Size = UDim2.new(0, 362, 0, 331)
-GameSection.Visible = false
+local local_player_section = Instance.new("Frame")
+local_player_section.BackgroundColor3 = Color3.new(1, 1, 1)
+local_player_section.BackgroundTransparency = 1
+local_player_section.BorderSizePixel = 0
+local_player_section.Size = UDim2.new(0, 362, 0, 331)
+local_player_section.Visible = false
+local_player_section.Name = "LocalPlayerSection"
+local_player_section.Parent = sections
 
-dropdown.Name = "dropdown"
-dropdown.Parent = GameSection
-dropdown.BackgroundColor3 = Color3.fromRGB(48, 48, 48)
+local game_section = Instance.new("Frame")
+game_section.BackgroundColor3 = Color3.new(1, 1, 1)
+game_section.BackgroundTransparency = 1
+game_section.BorderSizePixel = 0
+game_section.Size = UDim2.new(0, 362, 0, 331)
+game_section.Visible = false
+game_section.Name = "GameSection"
+game_section.Parent = sections
+
+local dropdown = Instance.new("TextButton")
+dropdown.Font = Enum.Font.GothamMedium
+dropdown.Text = "codesdropdown"
+dropdown.TextColor3 = Color3.new(1, 1, 1)
+dropdown.TextScaled = true
+dropdown.TextSize = 14
+dropdown.TextWrapped = true
+dropdown.BackgroundColor3 = Color3.new(0.188235, 0.188235, 0.188235)
 dropdown.BorderSizePixel = 0
 dropdown.Position = UDim2.new(0.0303867403, 0, 0.0407854989, 0)
 dropdown.Size = UDim2.new(0, 129, 0, 32)
+dropdown.Visible = true
 dropdown.ZIndex = 2
-dropdown.Font = Enum.Font.GothamMedium
-dropdown.Text = "codesdropdown"
-dropdown.TextColor3 = Color3.fromRGB(255, 255, 255)
-dropdown.TextScaled = true
-dropdown.TextSize = 14.000
-dropdown.TextWrapped = true
+dropdown.Name = "dropdown"
+dropdown.Parent = game_section
 
-Shadow_3.Name = "Shadow"
-Shadow_3.Parent = dropdown
-Shadow_3.BackgroundColor3 = Color3.fromRGB(22, 22, 22)
-Shadow_3.BorderSizePixel = 0
-Shadow_3.Size = UDim2.new(1, 0, 1, 4)
+local shadow_3 = Instance.new("Frame")
+shadow_3.BackgroundColor3 = Color3.new(0.0862745, 0.0862745, 0.0862745)
+shadow_3.BorderSizePixel = 0
+shadow_3.Size = UDim2.new(1, 0, 1, 4)
+shadow_3.Visible = true
+shadow_3.Name = "Shadow"
+shadow_3.Parent = dropdown
 
-TextLabel.Parent = dropdown
-TextLabel.AnchorPoint = Vector2.new(0.5, 0.5)
-TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.BackgroundTransparency = 1.000
-TextLabel.BorderColor3 = Color3.fromRGB(27, 42, 53)
-TextLabel.BorderSizePixel = 0
-TextLabel.Position = UDim2.new(0.5, 0, 0.5, 0)
-TextLabel.Size = UDim2.new(1, -20, 1, -20)
-TextLabel.ZIndex = 2
-TextLabel.Font = Enum.Font.Unknown
-TextLabel.Text = "codesdropdown"
-TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.TextScaled = true
-TextLabel.TextSize = 14.000
-TextLabel.TextWrapped = true
+local text_label = Instance.new("TextLabel")
+text_label.Font = Enum.Font.Unknown
+text_label.Text = "codesdropdown"
+text_label.TextColor3 = Color3.new(1, 1, 1)
+text_label.TextScaled = true
+text_label.TextSize = 14
+text_label.TextWrapped = true
+text_label.AnchorPoint = Vector2.new(0.5, 0.5)
+text_label.BackgroundColor3 = Color3.new(1, 1, 1)
+text_label.BackgroundTransparency = 1
+text_label.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+text_label.BorderSizePixel = 0
+text_label.Position = UDim2.new(0.5, 0, 0.5, 0)
+text_label.Size = UDim2.new(1, -20, 1, -20)
+text_label.Visible = true
+text_label.ZIndex = 2
+text_label.Parent = dropdown
 
-codesdropdown.Name = "codesdropdown"
-codesdropdown.Parent = GameSection
-codesdropdown.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-codesdropdown.BorderColor3 = Color3.fromRGB(255, 255, 255)
+local local_script_4 = Instance.new("LocalScript")
+local_script_4.Parent = text_label
+
+local local_script_5 = Instance.new("LocalScript")
+local_script_5.Parent = dropdown
+
+local codesdropdown = Instance.new("Frame")
+codesdropdown.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+codesdropdown.BorderColor3 = Color3.new(1, 1, 1)
 codesdropdown.BorderSizePixel = 2
 codesdropdown.Position = UDim2.new(0.0280000009, 0, 0.158000007, 0)
 codesdropdown.Size = UDim2.new(0, 130, 0, 90)
 codesdropdown.Visible = false
+codesdropdown.Name = "codesdropdown"
+codesdropdown.Parent = game_section
 
-freepoints.Name = "freepoints"
-freepoints.Parent = codesdropdown
-freepoints.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-freepoints.BackgroundTransparency = 1.000
-freepoints.Size = UDim2.new(0, 130, 0, 16)
+local freepoints = Instance.new("TextButton")
 freepoints.Font = Enum.Font.Unknown
 freepoints.Text = "freepoints"
-freepoints.TextColor3 = Color3.fromRGB(255, 255, 255)
+freepoints.TextColor3 = Color3.new(1, 1, 1)
 freepoints.TextScaled = true
-freepoints.TextSize = 14.000
+freepoints.TextSize = 14
 freepoints.TextWrapped = true
+freepoints.BackgroundColor3 = Color3.new(1, 1, 1)
+freepoints.BackgroundTransparency = 1
+freepoints.Size = UDim2.new(0, 130, 0, 16)
+freepoints.Visible = true
+freepoints.Name = "freepoints"
+freepoints.Parent = codesdropdown
 
-smallboost.Name = "smallboost"
-smallboost.Parent = codesdropdown
-smallboost.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-smallboost.BackgroundTransparency = 1.000
-smallboost.Position = UDim2.new(0, 0, 0.177777782, 0)
-smallboost.Size = UDim2.new(0, 130, 0, 16)
+local local_script_6 = Instance.new("LocalScript")
+local_script_6.Parent = freepoints
+
+local smallboost = Instance.new("TextButton")
 smallboost.Font = Enum.Font.Unknown
 smallboost.Text = "smallboost"
-smallboost.TextColor3 = Color3.fromRGB(255, 255, 255)
+smallboost.TextColor3 = Color3.new(1, 1, 1)
 smallboost.TextScaled = true
-smallboost.TextSize = 14.000
+smallboost.TextSize = 14
 smallboost.TextWrapped = true
+smallboost.BackgroundColor3 = Color3.new(1, 1, 1)
+smallboost.BackgroundTransparency = 1
+smallboost.Position = UDim2.new(0, 0, 0.177777782, 0)
+smallboost.Size = UDim2.new(0, 130, 0, 16)
+smallboost.Visible = true
+smallboost.Name = "smallboost"
+smallboost.Parent = codesdropdown
 
-_1MVISITS.Name = "1MVISITS"
-_1MVISITS.Parent = codesdropdown
-_1MVISITS.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-_1MVISITS.BackgroundTransparency = 1.000
-_1MVISITS.Position = UDim2.new(-0.0076923077, 0, 0.355555564, 0)
-_1MVISITS.Size = UDim2.new(0, 130, 0, 16)
-_1MVISITS.Font = Enum.Font.Unknown
-_1MVISITS.Text = "1MVISITS"
-_1MVISITS.TextColor3 = Color3.fromRGB(255, 255, 255)
-_1MVISITS.TextScaled = true
-_1MVISITS.TextSize = 14.000
-_1MVISITS.TextWrapped = true
+local local_script_7 = Instance.new("LocalScript")
+local_script_7.Parent = smallboost
 
-sorry4delay.Name = "sorry4delay"
-sorry4delay.Parent = codesdropdown
-sorry4delay.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-sorry4delay.BackgroundTransparency = 1.000
-sorry4delay.Position = UDim2.new(-0.0076923077, 0, 0.533333361, 0)
-sorry4delay.Size = UDim2.new(0, 130, 0, 16)
+local _1mvisits = Instance.new("TextButton")
+_1mvisits.Font = Enum.Font.Unknown
+_1mvisits.Text = "1MVISITS"
+_1mvisits.TextColor3 = Color3.new(1, 1, 1)
+_1mvisits.TextScaled = true
+_1mvisits.TextSize = 14
+_1mvisits.TextWrapped = true
+_1mvisits.BackgroundColor3 = Color3.new(1, 1, 1)
+_1mvisits.BackgroundTransparency = 1
+_1mvisits.Position = UDim2.new(-0.0076923077, 0, 0.355555564, 0)
+_1mvisits.Size = UDim2.new(0, 130, 0, 16)
+_1mvisits.Visible = true
+_1mvisits.Name = "1MVISITS"
+_1mvisits.Parent = codesdropdown
+
+local local_script_8 = Instance.new("LocalScript")
+local_script_8.Parent = _1mvisits
+
+local sorry4delay = Instance.new("TextButton")
 sorry4delay.Font = Enum.Font.Unknown
 sorry4delay.Text = "sorry4delay"
-sorry4delay.TextColor3 = Color3.fromRGB(255, 255, 255)
+sorry4delay.TextColor3 = Color3.new(1, 1, 1)
 sorry4delay.TextScaled = true
-sorry4delay.TextSize = 14.000
+sorry4delay.TextSize = 14
 sorry4delay.TextWrapped = true
+sorry4delay.BackgroundColor3 = Color3.new(1, 1, 1)
+sorry4delay.BackgroundTransparency = 1
+sorry4delay.Position = UDim2.new(-0.0076923077, 0, 0.533333361, 0)
+sorry4delay.Size = UDim2.new(0, 130, 0, 16)
+sorry4delay.Visible = true
+sorry4delay.Name = "sorry4delay"
+sorry4delay.Parent = codesdropdown
 
-sans.Name = "sans"
-sans.Parent = codesdropdown
-sans.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-sans.BackgroundTransparency = 1.000
-sans.Position = UDim2.new(-0.0076923077, 0, 0.722222269, 0)
-sans.Size = UDim2.new(0, 130, 0, 16)
+local local_script_9 = Instance.new("LocalScript")
+local_script_9.Parent = sorry4delay
+
+local sans = Instance.new("TextButton")
 sans.Font = Enum.Font.Unknown
 sans.Text = "sans"
-sans.TextColor3 = Color3.fromRGB(255, 255, 255)
+sans.TextColor3 = Color3.new(1, 1, 1)
 sans.TextScaled = true
-sans.TextSize = 14.000
+sans.TextSize = 14
 sans.TextWrapped = true
+sans.BackgroundColor3 = Color3.new(1, 1, 1)
+sans.BackgroundTransparency = 1
+sans.Position = UDim2.new(-0.0076923077, 0, 0.722222269, 0)
+sans.Size = UDim2.new(0, 130, 0, 16)
+sans.Visible = true
+sans.Name = "sans"
+sans.Parent = codesdropdown
 
-script.Name = "script"
-script.Parent = GameSection
-script.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-script.BorderSizePixel = 0
-script.Position = UDim2.new(0.425414354, 0, 0.0392749235, 0)
-script.Size = UDim2.new(0, 208, 0, 310)
+local local_script_10 = Instance.new("LocalScript")
+local_script_10.Parent = sans
+
+local script = Instance.new("TextLabel")
 script.Font = Enum.Font.FredokaOne
-script.Text = "[1] = code\\n-- [2] = {[\"TempKills\"] = Tempkillstextbox}\\n-- [\"Points\"] = pointstextbox\\n-- [\"RewardText\"] = string.upper(\"rewarded \" ..pointstextbox.. \" points\")"
-script.TextColor3 = Color3.fromRGB(255, 255, 255)
+script.Text = "code no work!!! (for nowlol)"
+script.TextColor3 = Color3.new(1, 1, 1)
 script.TextScaled = true
-script.TextSize = 14.000
+script.TextSize = 14
 script.TextWrapped = true
 script.TextXAlignment = Enum.TextXAlignment.Left
 script.TextYAlignment = Enum.TextYAlignment.Top
+script.BackgroundColor3 = Color3.new(0.0784314, 0.0784314, 0.0784314)
+script.BorderSizePixel = 0
+script.Position = UDim2.new(0.425414354, 0, 0.0392749235, 0)
+script.Size = UDim2.new(0, 208, 0, 310)
+script.Visible = true
+script.Name = "script"
+script.Parent = game_section
 
-pointstextbox.Name = "pointstextbox"
-pointstextbox.Parent = GameSection
-pointstextbox.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-pointstextbox.BorderColor3 = Color3.fromRGB(255, 255, 255)
+local pointstextbox = Instance.new("TextBox")
+pointstextbox.CursorPosition = -1
+pointstextbox.Font = Enum.Font.Unknown
+pointstextbox.PlaceholderColor3 = Color3.new(0.698039, 0.698039, 0.698039)
+pointstextbox.PlaceholderText = "Points in heya"
+pointstextbox.Text = ""
+pointstextbox.TextColor3 = Color3.new(1, 1, 1)
+pointstextbox.TextSize = 14
+pointstextbox.BackgroundColor3 = Color3.new(0.0784314, 0.0784314, 0.0784314)
+pointstextbox.BorderColor3 = Color3.new(1, 1, 1)
 pointstextbox.BorderSizePixel = 2
 pointstextbox.Position = UDim2.new(0.0303867403, 0, 0.489425987, 0)
 pointstextbox.Size = UDim2.new(0, 129, 0, 32)
-pointstextbox.Font = Enum.Font.Unknown
-pointstextbox.PlaceholderColor3 = Color3.fromRGB(178, 178, 178)
-pointstextbox.PlaceholderText = "Points in heya"
-pointstextbox.Text = ""
-pointstextbox.TextColor3 = Color3.fromRGB(255, 255, 255)
-pointstextbox.TextSize = 14.000
+pointstextbox.Visible = true
+pointstextbox.Name = "pointstextbox"
+pointstextbox.Parent = game_section
 
-tempkillstextbox.Name = "tempkillstextbox"
-tempkillstextbox.Parent = GameSection
-tempkillstextbox.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-tempkillstextbox.BorderColor3 = Color3.fromRGB(255, 255, 255)
+local tempkillstextbox = Instance.new("TextBox")
+tempkillstextbox.CursorPosition = -1
+tempkillstextbox.Font = Enum.Font.Unknown
+tempkillstextbox.PlaceholderColor3 = Color3.new(0.698039, 0.698039, 0.698039)
+tempkillstextbox.PlaceholderText = "TempKills in heya"
+tempkillstextbox.Text = ""
+tempkillstextbox.TextColor3 = Color3.new(0.992157, 0.992157, 0.992157)
+tempkillstextbox.TextSize = 14
+tempkillstextbox.BackgroundColor3 = Color3.new(0.0784314, 0.0784314, 0.0784314)
+tempkillstextbox.BorderColor3 = Color3.new(1, 1, 1)
 tempkillstextbox.BorderSizePixel = 2
 tempkillstextbox.Position = UDim2.new(0.0303867403, 0, 0.649546862, 0)
 tempkillstextbox.Size = UDim2.new(0, 129, 0, 32)
-tempkillstextbox.Font = Enum.Font.Unknown
-tempkillstextbox.PlaceholderColor3 = Color3.fromRGB(178, 178, 178)
-tempkillstextbox.PlaceholderText = "TempKills in heya"
-tempkillstextbox.Text = ""
-tempkillstextbox.TextColor3 = Color3.fromRGB(253, 253, 253)
-tempkillstextbox.TextSize = 14.000
+tempkillstextbox.Visible = true
+tempkillstextbox.Name = "tempkillstextbox"
+tempkillstextbox.Parent = game_section
 
-Execute.Name = "Execute"
-Execute.Parent = GameSection
-Execute.BackgroundColor3 = Color3.fromRGB(48, 48, 48)
-Execute.BorderSizePixel = 0
-Execute.Position = UDim2.new(0.0303867403, 0, 0.841389716, 0)
-Execute.Size = UDim2.new(0, 129, 0, 36)
-Execute.ZIndex = 2
-Execute.Font = Enum.Font.GothamMedium
-Execute.Text = ""
-Execute.TextColor3 = Color3.fromRGB(255, 255, 255)
-Execute.TextScaled = true
-Execute.TextSize = 14.000
-Execute.TextWrapped = true
+local execute = Instance.new("TextButton")
+execute.Font = Enum.Font.GothamMedium
+execute.Text = ""
+execute.TextColor3 = Color3.new(1, 1, 1)
+execute.TextScaled = true
+execute.TextSize = 14
+execute.TextWrapped = true
+execute.BackgroundColor3 = Color3.new(0.188235, 0.188235, 0.188235)
+execute.BorderSizePixel = 0
+execute.Position = UDim2.new(0.0303867403, 0, 0.841389716, 0)
+execute.Size = UDim2.new(0, 129, 0, 36)
+execute.Visible = true
+execute.ZIndex = 2
+execute.Name = "Execute"
+execute.Parent = game_section
 
-Shadow_4.Name = "Shadow"
-Shadow_4.Parent = Execute
-Shadow_4.BackgroundColor3 = Color3.fromRGB(22, 22, 22)
-Shadow_4.BorderSizePixel = 0
-Shadow_4.Size = UDim2.new(1, 0, 1, 4)
+local shadow_4 = Instance.new("Frame")
+shadow_4.BackgroundColor3 = Color3.new(0.0862745, 0.0862745, 0.0862745)
+shadow_4.BorderSizePixel = 0
+shadow_4.Size = UDim2.new(1, 0, 1, 4)
+shadow_4.Visible = true
+shadow_4.Name = "Shadow"
+shadow_4.Parent = execute
 
-Execute_2.Name = "Execute"
-Execute_2.Parent = Execute
-Execute_2.AnchorPoint = Vector2.new(0.5, 0.5)
-Execute_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Execute_2.BackgroundTransparency = 1.000
-Execute_2.BorderColor3 = Color3.fromRGB(27, 42, 53)
-Execute_2.BorderSizePixel = 0
-Execute_2.Position = UDim2.new(0.5, 0, 0.5, 0)
-Execute_2.Size = UDim2.new(1, -20, 1, -20)
-Execute_2.ZIndex = 2
-Execute_2.Font = Enum.Font.Unknown
-Execute_2.Text = "Execute settings"
-Execute_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-Execute_2.TextScaled = true
-Execute_2.TextSize = 14.000
-Execute_2.TextWrapped = true
+local execute_2 = Instance.new("TextLabel")
+execute_2.Font = Enum.Font.Unknown
+execute_2.Text = "Execute settings"
+execute_2.TextColor3 = Color3.new(1, 1, 1)
+execute_2.TextScaled = true
+execute_2.TextSize = 14
+execute_2.TextWrapped = true
+execute_2.AnchorPoint = Vector2.new(0.5, 0.5)
+execute_2.BackgroundColor3 = Color3.new(1, 1, 1)
+execute_2.BackgroundTransparency = 1
+execute_2.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+execute_2.BorderSizePixel = 0
+execute_2.Position = UDim2.new(0.5, 0, 0.5, 0)
+execute_2.Size = UDim2.new(1, -20, 1, -20)
+execute_2.Visible = true
+execute_2.ZIndex = 2
+execute_2.Name = "Execute"
+execute_2.Parent = execute
 
--- Scripts:
+local local_script_11 = Instance.new("LocalScript")
+local_script_11.Parent = execute
 
-local function UYGM_fake_script() -- MainUI.loadingscriptmain 
-	local script = Instance.new('LocalScript', MainUI)
+--//Modules
+
+local modules = {}
+
+--// Scripts
+
+-- loadingscriptmain
+task.spawn(function()
+	local script = loadingscriptmain
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
 
 	local topbar = script.Parent.TopBar
 	local mainui = script.Parent
@@ -443,10 +531,19 @@ local function UYGM_fake_script() -- MainUI.loadingscriptmain
 		tabs.Visible = true
 	end
 	
-end
-coroutine.wrap(UYGM_fake_script)()
-local function TSKZ_fake_script() -- TopBar.LocalScript 
-	local script = Instance.new('LocalScript', TopBar)
+end)
+
+-- LocalScript
+task.spawn(function()
+	local script = local_script
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
 
 	local exitbutton = script.Parent.exitbutton
 	local mainui = script.Parent.Parent
@@ -457,10 +554,19 @@ local function TSKZ_fake_script() -- TopBar.LocalScript
 		mainui:Destroy()
 		mainui.Visible = false
 	end)
-end
-coroutine.wrap(TSKZ_fake_script)()
-local function MULXYHQ_fake_script() -- SideTabs.sidetabsscript 
-	local script = Instance.new('LocalScript', SideTabs)
+end)
+
+-- sidetabsscript
+task.spawn(function()
+	local script = sidetabsscript
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
 
 	local sidetabs = script.Parent
 	local sections = script.Parent.Parent.Sections
@@ -485,10 +591,19 @@ local function MULXYHQ_fake_script() -- SideTabs.sidetabsscript
 		sections.LocalPlayerSection.Visible = false
 		sections.GameSection.Visible = true
 	end)
-end
-coroutine.wrap(MULXYHQ_fake_script)()
-local function UDWG_fake_script() -- gotorake.LocalScript 
-	local script = Instance.new('LocalScript', gotorake)
+end)
+
+-- LocalScript
+task.spawn(function()
+	local script = local_script_2
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
 
 	local button = script.Parent
 	local lp = game:FindService("Players").LocalPlayer
@@ -497,18 +612,36 @@ local function UDWG_fake_script() -- gotorake.LocalScript
 	button.MouseButton1Click:Connect(function()
 		lp.Character.HumanoidRootPart.Position = rakefolder.HumanoidRootPart.Position
 	end)
-end
-coroutine.wrap(UDWG_fake_script)()
-local function ROQKF_fake_script() -- killrakeclient.LocalScript 
-	local script = Instance.new('LocalScript', killrakeclient)
+end)
+
+-- LocalScript
+task.spawn(function()
+	local script = local_script_3
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
 
 	local rakefolder = game:GetService("Workspace").NPCs["The_Rake"]
 	
 	rakefolder.NPC.Health = 0
-end
-coroutine.wrap(ROQKF_fake_script)()
-local function QGGE_fake_script() -- TextLabel.LocalScript 
-	local script = Instance.new('LocalScript', TextLabel)
+end)
+
+-- LocalScript
+task.spawn(function()
+	local script = local_script_4
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
 
 	local codesdropdown = script.Parent.Parent.Parent.codesdropdown
 	local freepoints = codesdropdown.freepoints
@@ -533,10 +666,19 @@ local function QGGE_fake_script() -- TextLabel.LocalScript
 	sans.MouseButton1Click:Connect(function()
 		text.Text = "sans"
 	end)
-end
-coroutine.wrap(QGGE_fake_script)()
-local function GKPCC_fake_script() -- dropdown.LocalScript 
-	local script = Instance.new('LocalScript', dropdown)
+end)
+
+-- LocalScript
+task.spawn(function()
+	local script = local_script_5
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
 
 	local gamesection = script.Parent.Parent
 	local codesdropdown = gamesection.codesdropdown
@@ -545,10 +687,19 @@ local function GKPCC_fake_script() -- dropdown.LocalScript
 	button.MouseButton1Click:Connect(function()
 		codesdropdown.Visible = not codesdropdown.Visible
 	end)
-end
-coroutine.wrap(GKPCC_fake_script)()
-local function REOGPY_fake_script() -- freepoints.LocalScript 
-	local script = Instance.new('LocalScript', freepoints)
+end)
+
+-- LocalScript
+task.spawn(function()
+	local script = local_script_6
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
 
 	local gamesection = script.Parent.Parent.Parent
 	local dropdowntext = gamesection.dropdown.TextLabel.Text
@@ -557,10 +708,19 @@ local function REOGPY_fake_script() -- freepoints.LocalScript
 	button.MouseButton1Click:Connect(function()
 		dropdowntext = "freepoints"
 	end)
-end
-coroutine.wrap(REOGPY_fake_script)()
-local function YEJZ_fake_script() -- smallboost.LocalScript 
-	local script = Instance.new('LocalScript', smallboost)
+end)
+
+-- LocalScript
+task.spawn(function()
+	local script = local_script_7
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
 
 	local gamesection = script.Parent.Parent.Parent
 	local dropdowntext = gamesection.dropdown.TextLabel.Text
@@ -569,10 +729,19 @@ local function YEJZ_fake_script() -- smallboost.LocalScript
 	button.MouseButton1Click:Connect(function()
 		dropdowntext = "smallboost"
 	end)
-end
-coroutine.wrap(YEJZ_fake_script)()
-local function YGMCK_fake_script() -- _1MVISITS.LocalScript 
-	local script = Instance.new('LocalScript', _1MVISITS)
+end)
+
+-- LocalScript
+task.spawn(function()
+	local script = local_script_8
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
 
 	local gamesection = script.Parent.Parent.Parent
 	local dropdowntext = gamesection.dropdown.TextLabel.Text
@@ -581,10 +750,19 @@ local function YGMCK_fake_script() -- _1MVISITS.LocalScript
 	button.MouseButton1Click:Connect(function()
 		dropdowntext = "1MVISITS"
 	end)
-end
-coroutine.wrap(YGMCK_fake_script)()
-local function ZXAXGB_fake_script() -- sorry4delay.LocalScript 
-	local script = Instance.new('LocalScript', sorry4delay)
+end)
+
+-- LocalScript
+task.spawn(function()
+	local script = local_script_9
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
 
 	local gamesection = script.Parent.Parent.Parent
 	local dropdowntext = gamesection.dropdown.TextLabel.Text
@@ -593,10 +771,19 @@ local function ZXAXGB_fake_script() -- sorry4delay.LocalScript
 	button.MouseButton1Click:Connect(function()
 		dropdowntext = "sorry4delay"
 	end)
-end
-coroutine.wrap(ZXAXGB_fake_script)()
-local function RSLTK_fake_script() -- sans.LocalScript 
-	local script = Instance.new('LocalScript', sans)
+end)
+
+-- LocalScript
+task.spawn(function()
+	local script = local_script_10
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
 
 	local gamesection = script.Parent.Parent.Parent
 	local dropdowntext = gamesection.dropdown.TextLabel.Text
@@ -605,10 +792,19 @@ local function RSLTK_fake_script() -- sans.LocalScript
 	button.MouseButton1Click:Connect(function()
 		dropdowntext = "sans"
 	end)
-end
-coroutine.wrap(RSLTK_fake_script)()
-local function UTFM_fake_script() -- Execute.LocalScript 
-	local script = Instance.new('LocalScript', Execute)
+end)
+
+-- LocalScript
+task.spawn(function()
+	local script = local_script_11
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
 
 	local button = script.Parent
 	local gamesection = script.Parent.Parent
@@ -630,5 +826,4 @@ local function UTFM_fake_script() -- Execute.LocalScript
 	
 		game:GetService("ReplicatedStorage").Events:FindFirstChild("\216\163 \216\168 \216\172 \216\175 \217\135 \217\136 \216\178 \216\173\226\131\159\204\181\205\151\204\131\226\131\159\204\184\205\146\204\189\226\131\159\204\184\204\135\204\128\226\131\159\204\182\205\128\204\130\226\131\159\204\183\204\138\204\137\217\133\204\182\204\132\205\160\216\167\204\180\195\177\204\146\204\130"):InvokeServer(unpack(args))
 	end)
-end
-coroutine.wrap(UTFM_fake_script)()
+end)
