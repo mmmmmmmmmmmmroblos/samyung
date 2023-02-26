@@ -1,142 +1,194 @@
--- Gui to Lua
--- Version: 3.2
+--[[
+	Roblox2Lua
+	----------
+	
+	This code was generated using
+	Deluct's Roblox2Lua plugin.
+]]--
 
--- Instances:
+--// Instances
 
 local hub = Instance.new("ScreenGui")
-local LoadingUI = Instance.new("Frame")
-local subtitles = Instance.new("TextLabel")
-local UIGradient = Instance.new("UIGradient")
-local subtitles2 = Instance.new("TextLabel")
-local UIGradient_2 = Instance.new("UIGradient")
-local subtitles3 = Instance.new("TextLabel")
-local UIGradient_3 = Instance.new("UIGradient")
-local Title = Instance.new("TextLabel")
-local topbar = Instance.new("Frame")
-local exitbutton = Instance.new("TextButton")
-local Pattern = Instance.new("ImageLabel")
-local MainUI = Instance.new("TextButton")
-
---Properties:
-
-hub.Name = "hub"
-hub.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+hub.IgnoreGuiInset = false
+hub.ResetOnSpawn = true
 hub.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+hub.Name = "hub"
+hub.Parent = workspace
 
-LoadingUI.Name = "LoadingUI"
-LoadingUI.Parent = hub
-LoadingUI.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-LoadingUI.BorderColor3 = Color3.fromRGB(255, 255, 255)
-LoadingUI.BorderSizePixel = 2
-LoadingUI.Position = UDim2.new(0.403806567, 0, 0.31486252, 0)
-LoadingUI.Size = UDim2.new(0, 423, 0, 133)
+local loading_ui = Instance.new("Frame")
+loading_ui.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
+loading_ui.BorderColor3 = Color3.new(1, 1, 1)
+loading_ui.BorderSizePixel = 2
+loading_ui.Position = UDim2.new(0.403806567, 0, 0.31486252, 0)
+loading_ui.Size = UDim2.new(0, 423, 0, 133)
+loading_ui.Visible = true
+loading_ui.Name = "LoadingUI"
+loading_ui.Parent = hub
 
-subtitles.Name = "subtitles"
-subtitles.Parent = LoadingUI
-subtitles.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-subtitles.BackgroundTransparency = 1.000
-subtitles.Position = UDim2.new(0.18676123, 0, 0.503759384, 0)
-subtitles.Size = UDim2.new(0, 265, 0, 50)
+local loadingscript = Instance.new("LocalScript")
+loadingscript.Name = "loadingscript"
+loadingscript.Parent = loading_ui
+
+local usercheck = Instance.new("LocalScript")
+usercheck.Name = "usercheck"
+usercheck.Parent = loading_ui
+
+local subtitles = Instance.new("TextLabel")
 subtitles.Font = Enum.Font.Unknown
 subtitles.Text = ""
-subtitles.TextColor3 = Color3.fromRGB(255, 255, 255)
+subtitles.TextColor3 = Color3.new(1, 1, 1)
 subtitles.TextScaled = true
-subtitles.TextSize = 28.000
+subtitles.TextSize = 28
 subtitles.TextWrapped = true
+subtitles.BackgroundColor3 = Color3.new(1, 1, 1)
+subtitles.BackgroundTransparency = 1
+subtitles.Position = UDim2.new(0.18676123, 0, 0.503759384, 0)
+subtitles.Size = UDim2.new(0, 265, 0, 50)
+subtitles.Visible = true
+subtitles.Name = "subtitles"
+subtitles.Parent = loading_ui
 
-UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 55, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(115, 0, 255))}
-UIGradient.Parent = subtitles
+local uigradient = Instance.new("UIGradient")
+uigradient.Color = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0, 0.215686, 1)), ColorSequenceKeypoint.new(1, Color3.new(0.45098, 0, 1))})
+uigradient.Parent = subtitles
 
-subtitles2.Name = "subtitles2"
-subtitles2.Parent = LoadingUI
-subtitles2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-subtitles2.BackgroundTransparency = 1.000
-subtitles2.Position = UDim2.new(0.18676123, 0, 0.503759384, 0)
-subtitles2.Size = UDim2.new(0, 265, 0, 50)
+local sbu1 = Instance.new("LocalScript")
+sbu1.Name = "sbu1"
+sbu1.Parent = subtitles
+
+local subtitles2 = Instance.new("TextLabel")
 subtitles2.Font = Enum.Font.Unknown
 subtitles2.Text = ""
-subtitles2.TextColor3 = Color3.fromRGB(255, 255, 255)
+subtitles2.TextColor3 = Color3.new(1, 1, 1)
 subtitles2.TextScaled = true
-subtitles2.TextSize = 28.000
+subtitles2.TextSize = 28
 subtitles2.TextWrapped = true
+subtitles2.BackgroundColor3 = Color3.new(1, 1, 1)
+subtitles2.BackgroundTransparency = 1
+subtitles2.Position = UDim2.new(0.18676123, 0, 0.503759384, 0)
+subtitles2.Size = UDim2.new(0, 265, 0, 50)
+subtitles2.Visible = true
+subtitles2.Name = "subtitles2"
+subtitles2.Parent = loading_ui
 
-UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 55, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(115, 0, 255))}
-UIGradient_2.Parent = subtitles2
+local uigradient_2 = Instance.new("UIGradient")
+uigradient_2.Color = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0, 0.215686, 1)), ColorSequenceKeypoint.new(1, Color3.new(0.45098, 0, 1))})
+uigradient_2.Parent = subtitles2
 
-subtitles3.Name = "subtitles3"
-subtitles3.Parent = LoadingUI
-subtitles3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-subtitles3.BackgroundTransparency = 1.000
-subtitles3.Position = UDim2.new(0.18676123, 0, 0.503759384, 0)
-subtitles3.Size = UDim2.new(0, 265, 0, 50)
+local sub2 = Instance.new("LocalScript")
+sub2.Name = "sub2"
+sub2.Parent = subtitles2
+
+local subtitles3 = Instance.new("TextLabel")
 subtitles3.Font = Enum.Font.Unknown
 subtitles3.Text = ""
-subtitles3.TextColor3 = Color3.fromRGB(255, 255, 255)
+subtitles3.TextColor3 = Color3.new(1, 1, 1)
 subtitles3.TextScaled = true
-subtitles3.TextSize = 28.000
+subtitles3.TextSize = 28
 subtitles3.TextWrapped = true
+subtitles3.BackgroundColor3 = Color3.new(1, 1, 1)
+subtitles3.BackgroundTransparency = 1
+subtitles3.Position = UDim2.new(0.18676123, 0, 0.503759384, 0)
+subtitles3.Size = UDim2.new(0, 265, 0, 50)
+subtitles3.Visible = true
+subtitles3.Name = "subtitles3"
+subtitles3.Parent = loading_ui
 
-UIGradient_3.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 55, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(115, 0, 255))}
-UIGradient_3.Parent = subtitles3
+local uigradient_3 = Instance.new("UIGradient")
+uigradient_3.Color = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0, 0.215686, 1)), ColorSequenceKeypoint.new(1, Color3.new(0.45098, 0, 1))})
+uigradient_3.Parent = subtitles3
 
-Title.Name = "Title"
-Title.Parent = LoadingUI
-Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Title.BackgroundTransparency = 1.000
-Title.Position = UDim2.new(0.262411356, 0, 0.0480000004, 0)
-Title.Size = UDim2.new(0, 200, 0, 50)
-Title.Font = Enum.Font.FredokaOne
-Title.Text = "samyunghub"
-Title.TextColor3 = Color3.fromRGB(255, 255, 255)
-Title.TextSize = 25.000
+local sub3 = Instance.new("LocalScript")
+sub3.Name = "sub3"
+sub3.Parent = subtitles3
 
-topbar.Name = "topbar"
-topbar.Parent = LoadingUI
-topbar.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+local title = Instance.new("TextLabel")
+title.Font = Enum.Font.FredokaOne
+title.Text = "samyunghub"
+title.TextColor3 = Color3.new(1, 1, 1)
+title.TextSize = 25
+title.BackgroundColor3 = Color3.new(1, 1, 1)
+title.BackgroundTransparency = 1
+title.Position = UDim2.new(0.262411356, 0, 0.0480000004, 0)
+title.Size = UDim2.new(0, 200, 0, 50)
+title.Visible = true
+title.Name = "Title"
+title.Parent = loading_ui
+
+local titlesub = Instance.new("LocalScript")
+titlesub.Name = "titlesub"
+titlesub.Parent = title
+
+local topbar = Instance.new("Frame")
+topbar.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
 topbar.BorderSizePixel = 0
 topbar.Size = UDim2.new(0, 423, 0, 18)
+topbar.Visible = true
+topbar.Name = "topbar"
+topbar.Parent = loading_ui
 
-exitbutton.Name = "exitbutton"
-exitbutton.Parent = topbar
-exitbutton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-exitbutton.BackgroundTransparency = 1.000
-exitbutton.Position = UDim2.new(0.959811032, 0, 0, 0)
-exitbutton.Size = UDim2.new(0, 17, 0, 18)
+local local_script = Instance.new("LocalScript")
+local_script.Parent = topbar
+
+local exitbutton = Instance.new("TextButton")
 exitbutton.Font = Enum.Font.Unknown
 exitbutton.Text = "X"
-exitbutton.TextColor3 = Color3.fromRGB(255, 255, 255)
-exitbutton.TextSize = 14.000
+exitbutton.TextColor3 = Color3.new(1, 1, 1)
+exitbutton.TextSize = 14
+exitbutton.BackgroundColor3 = Color3.new(1, 1, 1)
+exitbutton.BackgroundTransparency = 1
+exitbutton.Position = UDim2.new(0.959811032, 0, 0, 0)
+exitbutton.Size = UDim2.new(0, 17, 0, 18)
+exitbutton.Visible = true
+exitbutton.Name = "exitbutton"
+exitbutton.Parent = topbar
 
-Pattern.Name = "Pattern"
-Pattern.Parent = LoadingUI
-Pattern.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Pattern.BackgroundTransparency = 1.000
-Pattern.Position = UDim2.new(-0.0011820331, 0, 0.135338351, 0)
-Pattern.Size = UDim2.new(0, 423, 0, 114)
-Pattern.ZIndex = 9
-Pattern.Image = "rbxassetid://10530276"
-Pattern.ImageTransparency = 0.600
-Pattern.ScaleType = Enum.ScaleType.Tile
-Pattern.SliceCenter = Rect.new(0, 256, 0, 256)
-Pattern.TileSize = UDim2.new(0, 30, 0, 30)
+local pattern = Instance.new("ImageLabel")
+pattern.Image = "rbxassetid://10530276"
+pattern.ImageTransparency = 0.6000000238418579
+pattern.ScaleType = Enum.ScaleType.Tile
+pattern.SliceCenter = Rect.new(0, 256, 0, 256)
+pattern.TileSize = UDim2.new(0, 30, 0, 30)
+pattern.BackgroundColor3 = Color3.new(1, 1, 1)
+pattern.BackgroundTransparency = 1
+pattern.Position = UDim2.new(-0.0011820331, 0, 0.135338351, 0)
+pattern.Size = UDim2.new(0, 423, 0, 114)
+pattern.Visible = true
+pattern.ZIndex = 9
+pattern.Name = "Pattern"
+pattern.Parent = loading_ui
 
-MainUI.Name = "MainUI"
-MainUI.Parent = LoadingUI
-MainUI.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
-MainUI.BorderColor3 = Color3.fromRGB(255, 255, 255)
-MainUI.BorderSizePixel = 2
-MainUI.Position = UDim2.new(0.262411356, 0, 0.684210539, 0)
-MainUI.Size = UDim2.new(0, 200, 0, 29)
-MainUI.Visible = false
-MainUI.Font = Enum.Font.Unknown
-MainUI.Text = "Execute MainUI"
-MainUI.TextColor3 = Color3.fromRGB(255, 255, 255)
-MainUI.TextSize = 14.000
+local main_ui = Instance.new("TextButton")
+main_ui.Font = Enum.Font.Unknown
+main_ui.Text = "Execute MainUI"
+main_ui.TextColor3 = Color3.new(1, 1, 1)
+main_ui.TextSize = 14
+main_ui.BackgroundColor3 = Color3.new(0.0588235, 0.0588235, 0.0588235)
+main_ui.BorderColor3 = Color3.new(1, 1, 1)
+main_ui.BorderSizePixel = 2
+main_ui.Position = UDim2.new(0.262411356, 0, 0.684210539, 0)
+main_ui.Size = UDim2.new(0, 200, 0, 29)
+main_ui.Visible = false
+main_ui.Name = "MainUI"
+main_ui.Parent = loading_ui
 
--- Scripts:
+--//Modules
 
-local function WJBMUJE_fake_script() -- LoadingUI.loadingscript 
-	local script = Instance.new('LocalScript', LoadingUI)
+local modules = {}
+
+--// Scripts
+
+-- loadingscript
+task.spawn(function()
+	local script = loadingscript
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
 
 	local text = script.Parent.Title
 	
@@ -148,20 +200,38 @@ local function WJBMUJE_fake_script() -- LoadingUI.loadingscript
 		wait(0.01)
 		text.TextTransparency = text.TextTransparency - 0.1
 	until text.TextTransparency == 0
-end
-coroutine.wrap(WJBMUJE_fake_script)()
-local function CSDRGSV_fake_script() -- LoadingUI.usercheck 
-	local script = Instance.new('LocalScript', LoadingUI)
+end)
+
+-- usercheck
+task.spawn(function()
+	local script = usercheck
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
 
 	local lp = game:GetService("Players").LocalPlayer
 	
 	if lp.Name ~= "totallyrealperson16" and lp.Name ~= "notprobroxdxd" and lp.Name ~= "steve_saver" and lp.Name ~= "123213wsdsaawdsa" and lp.Name ~= "Rakeoz" then
 		lp:Kick("Not whitelisted bru!!1")
 	end
-end
-coroutine.wrap(CSDRGSV_fake_script)()
-local function GWXXVZ_fake_script() -- subtitles.sbu1 
-	local script = Instance.new('LocalScript', subtitles)
+end)
+
+-- sbu1
+task.spawn(function()
+	local script = sbu1
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
 
 	local text = script.Parent
 	local lpname = game:GetService("Players").LocalPlayer.Name
@@ -189,10 +259,19 @@ local function GWXXVZ_fake_script() -- subtitles.sbu1
 		wait(0.01)
 		text.TextTransparency = text.TextTransparency + 0.1
 	until text.TextTransparency == 1
-end
-coroutine.wrap(GWXXVZ_fake_script)()
-local function XPUAQD_fake_script() -- subtitles2.sub2 
-	local script = Instance.new('LocalScript', subtitles2)
+end)
+
+-- sub2
+task.spawn(function()
+	local script = sub2
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
 
 	local text = script.Parent
 	local lpname = game:GetService("Players").LocalPlayer.Name
@@ -232,10 +311,19 @@ local function XPUAQD_fake_script() -- subtitles2.sub2
 		wait(0.01)
 		text.TextTransparency = text.TextTransparency + 0.1
 	until text.TextTransparency == 1
-end
-coroutine.wrap(XPUAQD_fake_script)()
-local function YLXF_fake_script() -- subtitles3.sub3 
-	local script = Instance.new('LocalScript', subtitles3)
+end)
+
+-- sub3
+task.spawn(function()
+	local script = sub3
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
 
 	local text = script.Parent
 	local lpname = game:GetService("Players").LocalPlayer.Name
@@ -290,10 +378,19 @@ local function YLXF_fake_script() -- subtitles3.sub3
 			text.TextTransparency = text.TextTransparency + 0.1
 		until text.TextTransparency == 1
 	end
-end
-coroutine.wrap(YLXF_fake_script)()
-local function CWWR_fake_script() -- Title.titlesub 
-	local script = Instance.new('LocalScript', Title)
+end)
+
+-- titlesub
+task.spawn(function()
+	local script = titlesub
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
 
 	local title = script.Parent
 	local loadingui = script.Parent.Parent
@@ -312,10 +409,19 @@ local function CWWR_fake_script() -- Title.titlesub
 			loadingui.BackgroundTransparency = loadingui.BackgroundTransparency + 0.1
 		until loadingui.BackgroundTransparency == 1
 	end)
-end
-coroutine.wrap(CWWR_fake_script)()
-local function TYVOWA_fake_script() -- topbar.LocalScript 
-	local script = Instance.new('LocalScript', topbar)
+end)
+
+-- LocalScript
+task.spawn(function()
+	local script = local_script
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
 
 	local thisui = script.Parent
 	local exitbutton = script.Parent.exitbutton
@@ -326,5 +432,4 @@ local function TYVOWA_fake_script() -- topbar.LocalScript
 		loadui:Destroy()
 		loadui.Visible = false
 	end)
-end
-coroutine.wrap(TYVOWA_fake_script)()
+end)
