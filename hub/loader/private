@@ -127,6 +127,7 @@ MainUI.BorderColor3 = Color3.fromRGB(255, 255, 255)
 MainUI.BorderSizePixel = 2
 MainUI.Position = UDim2.new(0.262411356, 0, 0.684210539, 0)
 MainUI.Size = UDim2.new(0, 200, 0, 29)
+MainUI.Visible = false
 MainUI.Font = Enum.Font.Unknown
 MainUI.Text = "Execute MainUI"
 MainUI.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -134,7 +135,7 @@ MainUI.TextSize = 14.000
 
 -- Scripts:
 
-local function HTMBYCO_fake_script() -- LoadingUI.loadingscript 
+local function WJBMUJE_fake_script() -- LoadingUI.loadingscript 
 	local script = Instance.new('LocalScript', LoadingUI)
 
 	local text = script.Parent.Title
@@ -148,8 +149,8 @@ local function HTMBYCO_fake_script() -- LoadingUI.loadingscript
 		text.TextTransparency = text.TextTransparency - 0.1
 	until text.TextTransparency == 0
 end
-coroutine.wrap(HTMBYCO_fake_script)()
-local function HQTNIMC_fake_script() -- LoadingUI.usercheck 
+coroutine.wrap(WJBMUJE_fake_script)()
+local function CSDRGSV_fake_script() -- LoadingUI.usercheck 
 	local script = Instance.new('LocalScript', LoadingUI)
 
 	local lp = game:GetService("Players").LocalPlayer
@@ -158,8 +159,8 @@ local function HQTNIMC_fake_script() -- LoadingUI.usercheck
 		lp:Kick("Not whitelisted bru!!1")
 	end
 end
-coroutine.wrap(HQTNIMC_fake_script)()
-local function AILO_fake_script() -- subtitles.sbu1 
+coroutine.wrap(CSDRGSV_fake_script)()
+local function GWXXVZ_fake_script() -- subtitles.sbu1 
 	local script = Instance.new('LocalScript', subtitles)
 
 	local text = script.Parent
@@ -189,8 +190,8 @@ local function AILO_fake_script() -- subtitles.sbu1
 		text.TextTransparency = text.TextTransparency + 0.1
 	until text.TextTransparency == 1
 end
-coroutine.wrap(AILO_fake_script)()
-local function NUUMFJV_fake_script() -- subtitles2.sub2 
+coroutine.wrap(GWXXVZ_fake_script)()
+local function XPUAQD_fake_script() -- subtitles2.sub2 
 	local script = Instance.new('LocalScript', subtitles2)
 
 	local text = script.Parent
@@ -232,8 +233,8 @@ local function NUUMFJV_fake_script() -- subtitles2.sub2
 		text.TextTransparency = text.TextTransparency + 0.1
 	until text.TextTransparency == 1
 end
-coroutine.wrap(NUUMFJV_fake_script)()
-local function PKZXFZ_fake_script() -- subtitles3.sub3 
+coroutine.wrap(XPUAQD_fake_script)()
+local function YLXF_fake_script() -- subtitles3.sub3 
 	local script = Instance.new('LocalScript', subtitles3)
 
 	local text = script.Parent
@@ -270,11 +271,15 @@ local function PKZXFZ_fake_script() -- subtitles3.sub3
 	wait(1)
 	
 	if game.GameId ~= "7026533870" then
-		text.Text = "Wrong Game!"
-		wait(2)
-		text.Text = "Now Kicking Player"
-		wait(1)
-		lp:Kick("Wrong Game!")
+		text.Text = "Fetched Game!"
+		wait(1.5)
+		text.Text = "Now Loading The MainUI"
+		wait(0.7)
+		print("sub3 is done!")
+		repeat
+			wait(0.01)
+			text.TextTransparency = text.TextTransparency + 0.1
+		until text.TextTransparency == 1
 	else
 		text.Text = "Fetched Game!"
 		wait(1.5)
@@ -286,8 +291,8 @@ local function PKZXFZ_fake_script() -- subtitles3.sub3
 		until text.TextTransparency == 1
 	end
 end
-coroutine.wrap(PKZXFZ_fake_script)()
-local function KLTWVC_fake_script() -- Title.titlesub 
+coroutine.wrap(YLXF_fake_script)()
+local function CWWR_fake_script() -- Title.titlesub 
 	local script = Instance.new('LocalScript', Title)
 
 	local title = script.Parent
@@ -299,6 +304,7 @@ local function KLTWVC_fake_script() -- Title.titlesub
 	title.Text = ""
 	loadingui.Pattern.Visible = false
 	loadingui.topbar.Visible = false
+	button.Visible = true
 	button.MouseButton1Click:Connect(function()
 		loadstring(game:HttpGet(("https://raw.githubusercontent.com/mmmmmmmmmmmmroblos/samyung/main/hub/main/private"),true))()
 		repeat
@@ -307,8 +313,8 @@ local function KLTWVC_fake_script() -- Title.titlesub
 		until loadingui.BackgroundTransparency == 1
 	end)
 end
-coroutine.wrap(KLTWVC_fake_script)()
-local function GTXR_fake_script() -- topbar.LocalScript 
+coroutine.wrap(CWWR_fake_script)()
+local function TYVOWA_fake_script() -- topbar.LocalScript 
 	local script = Instance.new('LocalScript', topbar)
 
 	local thisui = script.Parent
@@ -321,4 +327,4 @@ local function GTXR_fake_script() -- topbar.LocalScript
 		loadui.Visible = false
 	end)
 end
-coroutine.wrap(GTXR_fake_script)()
+coroutine.wrap(TYVOWA_fake_script)()
