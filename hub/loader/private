@@ -1,0 +1,327 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local hub = Instance.new("ScreenGui")
+local LoadingUI = Instance.new("Frame")
+local subtitles = Instance.new("TextLabel")
+local UIGradient = Instance.new("UIGradient")
+local subtitles2 = Instance.new("TextLabel")
+local UIGradient_2 = Instance.new("UIGradient")
+local subtitles3 = Instance.new("TextLabel")
+local UIGradient_3 = Instance.new("UIGradient")
+local Title = Instance.new("TextLabel")
+local topbar = Instance.new("Frame")
+local exitbutton = Instance.new("TextButton")
+local Pattern = Instance.new("ImageLabel")
+local MainUI = Instance.new("TextButton")
+
+--Properties:
+
+hub.Name = "hub"
+hub.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+hub.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+LoadingUI.Name = "LoadingUI"
+LoadingUI.Parent = hub
+LoadingUI.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+LoadingUI.BorderColor3 = Color3.fromRGB(255, 255, 255)
+LoadingUI.BorderSizePixel = 2
+LoadingUI.Position = UDim2.new(0.403806567, 0, 0.31486252, 0)
+LoadingUI.Size = UDim2.new(0, 423, 0, 133)
+
+subtitles.Name = "subtitles"
+subtitles.Parent = LoadingUI
+subtitles.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+subtitles.BackgroundTransparency = 1.000
+subtitles.Position = UDim2.new(0.18676123, 0, 0.503759384, 0)
+subtitles.Size = UDim2.new(0, 265, 0, 50)
+subtitles.Font = Enum.Font.Unknown
+subtitles.Text = ""
+subtitles.TextColor3 = Color3.fromRGB(255, 255, 255)
+subtitles.TextScaled = true
+subtitles.TextSize = 28.000
+subtitles.TextWrapped = true
+
+UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 55, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(115, 0, 255))}
+UIGradient.Parent = subtitles
+
+subtitles2.Name = "subtitles2"
+subtitles2.Parent = LoadingUI
+subtitles2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+subtitles2.BackgroundTransparency = 1.000
+subtitles2.Position = UDim2.new(0.18676123, 0, 0.503759384, 0)
+subtitles2.Size = UDim2.new(0, 265, 0, 50)
+subtitles2.Font = Enum.Font.Unknown
+subtitles2.Text = ""
+subtitles2.TextColor3 = Color3.fromRGB(255, 255, 255)
+subtitles2.TextScaled = true
+subtitles2.TextSize = 28.000
+subtitles2.TextWrapped = true
+
+UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 55, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(115, 0, 255))}
+UIGradient_2.Parent = subtitles2
+
+subtitles3.Name = "subtitles3"
+subtitles3.Parent = LoadingUI
+subtitles3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+subtitles3.BackgroundTransparency = 1.000
+subtitles3.Position = UDim2.new(0.18676123, 0, 0.503759384, 0)
+subtitles3.Size = UDim2.new(0, 265, 0, 50)
+subtitles3.Font = Enum.Font.Unknown
+subtitles3.Text = ""
+subtitles3.TextColor3 = Color3.fromRGB(255, 255, 255)
+subtitles3.TextScaled = true
+subtitles3.TextSize = 28.000
+subtitles3.TextWrapped = true
+
+UIGradient_3.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 55, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(115, 0, 255))}
+UIGradient_3.Parent = subtitles3
+
+Title.Name = "Title"
+Title.Parent = LoadingUI
+Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundTransparency = 1.000
+Title.Position = UDim2.new(0.262411356, 0, 0.0480000004, 0)
+Title.Size = UDim2.new(0, 200, 0, 50)
+Title.Font = Enum.Font.FredokaOne
+Title.Text = "samyunghub"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextSize = 25.000
+
+topbar.Name = "topbar"
+topbar.Parent = LoadingUI
+topbar.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+topbar.BorderSizePixel = 0
+topbar.Size = UDim2.new(0, 423, 0, 18)
+
+exitbutton.Name = "exitbutton"
+exitbutton.Parent = topbar
+exitbutton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+exitbutton.BackgroundTransparency = 1.000
+exitbutton.Position = UDim2.new(0.959811032, 0, 0, 0)
+exitbutton.Size = UDim2.new(0, 17, 0, 18)
+exitbutton.Font = Enum.Font.Unknown
+exitbutton.Text = "X"
+exitbutton.TextColor3 = Color3.fromRGB(255, 255, 255)
+exitbutton.TextSize = 14.000
+
+Pattern.Name = "Pattern"
+Pattern.Parent = LoadingUI
+Pattern.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Pattern.BackgroundTransparency = 1.000
+Pattern.Position = UDim2.new(-0.0011820331, 0, 0.135338351, 0)
+Pattern.Size = UDim2.new(0, 423, 0, 114)
+Pattern.ZIndex = 9
+Pattern.Image = "rbxassetid://10530276"
+Pattern.ImageTransparency = 0.600
+Pattern.ScaleType = Enum.ScaleType.Tile
+Pattern.SliceCenter = Rect.new(0, 256, 0, 256)
+Pattern.TileSize = UDim2.new(0, 30, 0, 30)
+
+MainUI.Name = "MainUI"
+MainUI.Parent = LoadingUI
+MainUI.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+MainUI.BorderColor3 = Color3.fromRGB(255, 255, 255)
+MainUI.BorderSizePixel = 2
+MainUI.Position = UDim2.new(0.262411356, 0, 0.684210539, 0)
+MainUI.Size = UDim2.new(0, 200, 0, 29)
+MainUI.Font = Enum.Font.Unknown
+MainUI.Text = "Execute MainUI"
+MainUI.TextColor3 = Color3.fromRGB(255, 255, 255)
+MainUI.TextSize = 14.000
+
+-- Scripts:
+
+local function HTMBYCO_fake_script() -- LoadingUI.loadingscript 
+	local script = Instance.new('LocalScript', LoadingUI)
+
+	local text = script.Parent.Title
+	
+	text.TextTransparency = 1
+	
+	wait(1)
+	
+	repeat
+		wait(0.01)
+		text.TextTransparency = text.TextTransparency - 0.1
+	until text.TextTransparency == 0
+end
+coroutine.wrap(HTMBYCO_fake_script)()
+local function HQTNIMC_fake_script() -- LoadingUI.usercheck 
+	local script = Instance.new('LocalScript', LoadingUI)
+
+	local lp = game:GetService("Players").LocalPlayer
+	
+	if lp.Name ~= "totallyrealperson16" and lp.Name ~= "notprobroxdxd" and lp.Name ~= "steve_saver" and lp.Name ~= "123213wsdsaawdsa" and lp.Name ~= "Rakeoz" then
+		lp:Kick("Not whitelisted bru!!1")
+	end
+end
+coroutine.wrap(HQTNIMC_fake_script)()
+local function AILO_fake_script() -- subtitles.sbu1 
+	local script = Instance.new('LocalScript', subtitles)
+
+	local text = script.Parent
+	local lpname = game:GetService("Players").LocalPlayer.Name
+	
+	wait(2)
+	
+	local function typewrite(object, text, length)
+		for i = 1,#text,1 do
+			object.Text = string.sub(text,1,i)
+			wait(length)
+		end
+	end
+	
+	typewrite(script.Parent, "...", 1)
+	
+	text.Text = ""
+	
+	wait(1)
+	
+	typewrite(script.Parent, "Welcome " ..lpname.. " to samyung", 0.1)
+	
+	wait(0.7)
+	
+	repeat
+		wait(0.01)
+		text.TextTransparency = text.TextTransparency + 0.1
+	until text.TextTransparency == 1
+end
+coroutine.wrap(AILO_fake_script)()
+local function NUUMFJV_fake_script() -- subtitles2.sub2 
+	local script = Instance.new('LocalScript', subtitles2)
+
+	local text = script.Parent
+	local lpname = game:GetService("Players").LocalPlayer.Name
+	
+	local function typewrite(object, text, length)
+		for i = 1,#text,1 do
+			object.Text = string.sub(text,1,i)
+			wait(length)
+		end
+	end
+	
+	wait(11.8)
+	
+	wait(0.1)
+	
+	typewrite(script.Parent, "Loading security system", 0.1)
+	
+	wait(1)
+	
+	text.Text = "Loading security system."
+	
+	wait(1)
+	
+	text.Text = "Loading security system.."
+	
+	wait(1)
+	
+	text.Text = "Loading security system..."
+	
+	wait(1)
+	
+	text.Text = "Loaded!"
+	
+	wait(0.7)
+	
+	repeat
+		wait(0.01)
+		text.TextTransparency = text.TextTransparency + 0.1
+	until text.TextTransparency == 1
+end
+coroutine.wrap(NUUMFJV_fake_script)()
+local function PKZXFZ_fake_script() -- subtitles3.sub3 
+	local script = Instance.new('LocalScript', subtitles3)
+
+	local text = script.Parent
+	local lpname = game:GetService("Players").LocalPlayer.Name
+	local lp = game:GetService("Players").LocalPlayer
+	local loadingui = script.Parent.Parent
+	local title = script.Parent.Parent.Title
+	
+	local function typewrite(object, text, length)
+		for i = 1,#text,1 do
+			object.Text = string.sub(text,1,i)
+			wait(length)
+		end
+	end
+	
+	wait(19.8)
+	
+	wait(0.1)
+	
+	typewrite(script.Parent, "Fetching Game", 0.1)
+	
+	wait(1)
+	
+	text.Text = "Fetching Game."
+	
+	wait(1)
+	
+	text.Text = "Fetching Game.."
+	
+	wait(1)
+	
+	text.Text = "Fetching Game..."
+	
+	wait(1)
+	
+	if game.GameId ~= "7026533870" then
+		text.Text = "Fetched Game!"
+		wait(1.5)
+		text.Text = "Now Loading The MainUI"
+		wait(0.7)
+		print("sub3 is done!")
+		repeat
+			wait(0.01)
+			text.TextTransparency = text.TextTransparency + 0.1
+		until text.TextTransparency == 1
+	else
+		text.Text = "Fetched Game!"
+		wait(1.5)
+		text.Text = "Now Loading The MainUI"
+		wait(0.7)
+		repeat
+			wait(0.01)
+			text.TextTransparency = text.TextTransparency + 0.1
+		until text.TextTransparency == 1
+	end
+end
+coroutine.wrap(PKZXFZ_fake_script)()
+local function KLTWVC_fake_script() -- Title.titlesub 
+	local script = Instance.new('LocalScript', Title)
+
+	local title = script.Parent
+	local loadingui = script.Parent.Parent
+	local button = loadingui.MainUI
+	
+	wait(28)
+	
+	title.Text = ""
+	loadingui.Pattern.Visible = false
+	loadingui.topbar.Visible = false
+	button.MouseButton1Click:Connect(function()
+		repeat
+			wait(0.01)
+			loadingui.BackgroundTransparency = loadingui.BackgroundTransparency + 0.1
+		until loadingui.BackgroundTransparency == 1
+	end)
+end
+coroutine.wrap(KLTWVC_fake_script)()
+local function GTXR_fake_script() -- topbar.LocalScript 
+	local script = Instance.new('LocalScript', topbar)
+
+	local thisui = script.Parent
+	local exitbutton = script.Parent.exitbutton
+	local loadui = script.Parent.Parent
+	
+	thisui.Draggable = true
+	exitbutton.MouseButton1Click:Connect(function()
+		loadui:Destroy()
+		loadui.Visible = false
+	end)
+end
+coroutine.wrap(GTXR_fake_script)()
