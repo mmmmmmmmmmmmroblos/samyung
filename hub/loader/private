@@ -270,15 +270,11 @@ local function PKZXFZ_fake_script() -- subtitles3.sub3
 	wait(1)
 	
 	if game.GameId ~= "7026533870" then
-		text.Text = "Fetched Game!"
-		wait(1.5)
-		text.Text = "Now Loading The MainUI"
-		wait(0.7)
-		print("sub3 is done!")
-		repeat
-			wait(0.01)
-			text.TextTransparency = text.TextTransparency + 0.1
-		until text.TextTransparency == 1
+		text.Text = "Wrong Game!"
+		wait(2)
+		text.Text = "Now Kicking Player"
+		wait(1)
+		lp:Kick("Wrong Game!")
 	else
 		text.Text = "Fetched Game!"
 		wait(1.5)
@@ -304,6 +300,7 @@ local function KLTWVC_fake_script() -- Title.titlesub
 	loadingui.Pattern.Visible = false
 	loadingui.topbar.Visible = false
 	button.MouseButton1Click:Connect(function()
+		loadstring(game:HttpGet(("https://raw.githubusercontent.com/mmmmmmmmmmmmroblos/samyung/main/hub/main/private"),true))()
 		repeat
 			wait(0.01)
 			loadingui.BackgroundTransparency = loadingui.BackgroundTransparency + 0.1
